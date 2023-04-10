@@ -4,7 +4,7 @@ import threading as th
 import pygame
 import time  
 from threading import Timer  
-from timer import timer
+# from timer import timer
 from PyQt5.QtWidgets import QApplication, QMainWindow
 # from PyQt5.QtMultimedia import QMediaPlayer,QMediaContent
 # from PyQt5.QtMultimediaWidgets import QVideoWidget
@@ -140,9 +140,6 @@ class MainWindow(QMainWindow):
     def show_music(self):
         # self.mediaPlayer.play()
         # Tải tệp nhạc vào bộ nhớ
-        
-        
-
         if(self.__playMusic == False):
             
             pygame.mixer.music.load(self.list[self.index].link)

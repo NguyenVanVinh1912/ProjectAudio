@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(0, 400, 621, 281))
+        self.widget.setGeometry(QtCore.QRect(0, 420, 621, 281))
         self.widget.setObjectName("widget")
         self.ngau_nhien = QtWidgets.QPushButton(self.widget)
         self.ngau_nhien.setGeometry(QtCore.QRect(10, 10, 41, 41))
@@ -39,6 +39,7 @@ class Ui_MainWindow(object):
         self.ngau_nhien.setObjectName("ngau_nhien")
         self.lap_lai = QtWidgets.QPushButton(self.widget)
         self.lap_lai.setGeometry(QtCore.QRect(260, 10, 41, 41))
+        
         font = QtGui.QFont()
         font.setPointSize(24)
         self.lap_lai.setFont(font)
@@ -49,7 +50,7 @@ class Ui_MainWindow(object):
         self.lap_lai.setIconSize(QtCore.QSize(32, 32))
         self.lap_lai.setObjectName("lap_lai")
         self.volume = QtWidgets.QSlider(self.widget)
-        self.volume.setGeometry(QtCore.QRect(420, 20, 191, 22))
+        self.volume.setGeometry(QtCore.QRect(430, 20, 191, 22))
         self.volume.setOrientation(QtCore.Qt.Horizontal)
         self.volume.setObjectName("volume")
         self.line = QtWidgets.QFrame(self.widget)
@@ -124,16 +125,13 @@ class Ui_MainWindow(object):
         self.dung_lai.setIcon(icon7)
         self.dung_lai.setIconSize(QtCore.QSize(32, 32))
         self.dung_lai.setObjectName("dung_lai")
-        self.list_song = QtWidgets.QTableWidget(self.widget)
-        self.list_song.setGeometry(QtCore.QRect(0, 100, 621, 181))
-        self.list_song.setObjectName("list_song")
-        self.list_song.setColumnCount(0)
-        self.list_song.setRowCount(0)
-        self.add_file = QtWidgets.QPushButton(self.widget)
-        self.add_file.setGeometry(QtCore.QRect(0, 70, 61, 28))
-        self.add_file.setObjectName("add_file")
+        self.table_list = QtWidgets.QTableWidget(self.widget)
+        self.table_list.setGeometry(QtCore.QRect(0, 80, 621, 201))
+        self.table_list.setObjectName("table_list")
+        self.table_list.setColumnCount(0)
+        self.table_list.setRowCount(0)
         self.noi_dung_mp3 = QtWidgets.QScrollBar(self.centralwidget)
-        self.noi_dung_mp3.setGeometry(QtCore.QRect(20, 360, 601, 31))
+        self.noi_dung_mp3.setGeometry(QtCore.QRect(10, 320, 601, 31))
         self.noi_dung_mp3.setOrientation(QtCore.Qt.Horizontal)
         self.noi_dung_mp3.setObjectName("noi_dung_mp3")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -148,12 +146,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.add_file.setText(_translate("MainWindow", "File"))
 
 
 if __name__ == "__main__":

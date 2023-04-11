@@ -5,7 +5,8 @@ import pygame
 import time  
 from threading import Timer  
 # from timer import timer
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5 import QtCore, QtGui, QtWidgets
 # from PyQt5.QtMultimedia import QMediaPlayer,QMediaContent
 # from PyQt5.QtMultimediaWidgets import QVideoWidget
 # from PyQt5.QtCore import QUrl
@@ -72,6 +73,9 @@ class MainWindow(QMainWindow):
         for value in self.list:
             pygame.mixer.music.queue(value.link)
     #hiển thị thời gian
+    # Tạo đối tượng QLabel
+        
+
     def display(self):  
         mi = int(pygame.mixer.music.get_pos()/1000/60)
         if(mi < 10):
@@ -88,6 +92,7 @@ class MainWindow(QMainWindow):
             self.restartTimer()
             self.temp = 0
         print(str(mi)+":"+str(second)) 
+        self.uic.time_label.setText( "{}:{}".format(mi, second))
     #lui bài hát
     def prevMusic(self):
         if(self.callBackMusic == True):
@@ -140,8 +145,7 @@ class MainWindow(QMainWindow):
     def show_music(self):
         # self.mediaPlayer.play()
         # Tải tệp nhạc vào bộ nhớ
-        if(self.__playMusic == False):
-            
+        if(self.__playMusic == False):   
             pygame.mixer.music.load(self.list[self.index].link)
             self.__playMusic = True
             pygame.mixer.music.play()

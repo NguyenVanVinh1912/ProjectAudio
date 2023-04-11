@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>625</width>
+    <width>624</width>
     <height>764</height>
    </rect>
   </property>
@@ -309,18 +309,41 @@
      </property>
     </widget>
    </widget>
-   <widget class="QScrollBar" name="noi_dung_mp3">
+   <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>310</y>
-      <width>601</width>
-      <height>31</height>
+      <width>621</width>
+      <height>51</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
+    <widget class="QScrollBar" name="noi_dung_mp3">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>551</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>00:00</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -328,7 +351,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>625</width>
+     <width>624</width>
      <height>26</height>
     </rect>
    </property>

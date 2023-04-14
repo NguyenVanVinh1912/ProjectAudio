@@ -39,6 +39,7 @@ class MainWindow(QMainWindow):
         self.uic.lap_lai.clicked.connect(self.callBackMus)
         self.uic.chuyen_bai.clicked.connect(self.nextMusic)
         self.uic.ngau_nhien.clicked.connect(self.randomMusic)
+        
 
         self.createList()
         #self.queuMusic()
@@ -73,7 +74,6 @@ class MainWindow(QMainWindow):
         for value in self.list:
             pygame.mixer.music.queue(value.link)
     #hiển thị thời gian
-    # Tạo đối tượng QLabel
         
 
     def display(self):  
@@ -93,6 +93,7 @@ class MainWindow(QMainWindow):
             self.temp = 0
         print(str(mi)+":"+str(second)) 
         self.uic.time_label.setText( "{}:{}".format(mi, second))
+        # self.uic.noi_dung_mp3.value = 50
     #lui bài hát
     def prevMusic(self):
         if(self.callBackMusic == True):

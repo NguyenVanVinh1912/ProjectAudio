@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>627</width>
-    <height>764</height>
+    <width>624</width>
+    <height>874</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,10 +18,13 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>10</y>
+      <y>30</y>
       <width>621</width>
       <height>291</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="text">
      <string/>
@@ -37,9 +40,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>400</y>
+      <y>440</y>
       <width>621</width>
-      <height>281</height>
+      <height>401</height>
      </rect>
     </property>
     <widget class="QPushButton" name="ngau_nhien">
@@ -106,6 +109,9 @@
        <width>191</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="value">
+      <number>50</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -268,10 +274,104 @@
      </property>
     </widget>
     <widget class="QPushButton" name="dung_lai">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
-       <y>10</y>
+       <x>240</x>
+       <y>60</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>24</pointsize>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>image/tim_kiem.png</normaloff>image/tim_kiem.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>18</width>
+       <height>26</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="autoRepeat">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="table_list">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>621</width>
+       <height>261</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Chọn file</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="select">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>60</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="dung_lai_3">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>330</y>
        <width>41</width>
        <height>41</height>
       </rect>
@@ -295,59 +395,108 @@
       </size>
      </property>
     </widget>
-    <widget class="QTableWidget" name="list_song">
+    <widget class="QLineEdit" name="tim_kiem">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>100</y>
-       <width>621</width>
-       <height>181</height>
+       <x>110</x>
+       <y>60</y>
+       <width>161</width>
+       <height>31</height>
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="add_file">
+    <zorder>ngau_nhien</zorder>
+    <zorder>lap_lai</zorder>
+    <zorder>volume</zorder>
+    <zorder>line</zorder>
+    <zorder>loa_active</zorder>
+    <zorder>lui_bai</zorder>
+    <zorder>phat</zorder>
+    <zorder>tam_dung</zorder>
+    <zorder>chuyen_bai</zorder>
+    <zorder>table_list</zorder>
+    <zorder>pushButton</zorder>
+    <zorder>select</zorder>
+    <zorder>dung_lai_3</zorder>
+    <zorder>tim_kiem</zorder>
+    <zorder>dung_lai</zorder>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>380</y>
+      <width>621</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <widget class="QScrollBar" name="noi_dung_mp3">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>70</y>
-       <width>61</width>
-       <height>28</height>
+       <x>60</x>
+       <y>10</y>
+       <width>551</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>41</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>File</string>
+      <string>00:00</string>
      </property>
     </widget>
    </widget>
-   <widget class="QScrollBar" name="noi_dung_mp3">
+   <widget class="QLabel" name="ten_bai_hat">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>360</y>
-      <width>601</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>310</y>
-      <width>381</width>
+      <x>10</x>
+      <y>330</y>
+      <width>191</width>
       <height>41</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>71</width>
+      <height>28</height>
+     </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;TextLabel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>Home</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="thu_vien">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>0</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Library</string>
     </property>
    </widget>
   </widget>
@@ -356,7 +505,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>627</width>
+     <width>624</width>
      <height>26</height>
     </rect>
    </property>

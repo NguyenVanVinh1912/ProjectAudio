@@ -44,6 +44,10 @@ class MainWindow(QMainWindow):
         self.createList()
         #self.queuMusic()
         self.timer = RepeatTimer(1,self.display) 
+
+        self.uic.noi_dung_mp3.setMinimum(0)
+        self.uic.noi_dung_mp3.setMaximum(100)
+      
         
         # #QMediaPlayer
         # self.mediaPlayer = QMediaPlayer(None,QMediaPlayer.VideoSurface)
@@ -74,7 +78,12 @@ class MainWindow(QMainWindow):
         for value in self.list:
             pygame.mixer.music.queue(value.link)
     #hiển thị thời gian
-        
+    def tong_thoi_gian_bai_hat(danh_sach_thoi_gian):
+        tong = 0
+        for thoi_gian in danh_sach_thoi_gian:
+            phut, giay = thoi_gian.split(":")
+            tong += int(phut) * 60 + int(giay)
+        return tong   
 
     def display(self):  
         mi = int(pygame.mixer.music.get_pos()/1000/60)
@@ -93,7 +102,7 @@ class MainWindow(QMainWindow):
             self.temp = 0
         print(str(mi)+":"+str(second)) 
         self.uic.time_label.setText( "{}:{}".format(mi, second))
-        # self.uic.noi_dung_mp3.value = 50
+        self.uic.noi_dung_mp3.setValue(int(second))
     #lui bài hát
     def prevMusic(self):
         if(self.callBackMusic == True):
@@ -128,11 +137,11 @@ class MainWindow(QMainWindow):
         pygame.mixer.music.play()
         self.restartTimer()
     def createList(self):
-        self.list = [Music("Tìm em","./music/TimEm.mp3",""),
-        Music("Tình đầu","./music/TinhDau.mp3",""),
-        Music("Tình yêu khủng long","./music/TinhYeuKhungLong.mp3",""),
-        Music("Tòng Phu","./music/TongPhu.mp3",""),
-        Music("Trên tình bạn dưới tình yêu","./music/TrenTinhBanDuoiTinhYeu.mp3","")
+        self.list = [Music("Tìm em","./music/TimEm.mp3","","266"),
+        Music("Tình đầu","./music/TinhDau.mp3","","292"),
+        Music("Tình yêu khủng long","./music/TinhYeuKhungLong.mp3","","187"),
+        Music("Tòng Phu","./music/TongPhu.mp3","","290"),
+        Music("Trên tình bạn dưới tình yêu","./music/TrenTinhBanDuoiTinhYeu.mp3","","196")
         ]
     def random(self):
         return random.randint(0, len(self.list)-2)
@@ -148,6 +157,8 @@ class MainWindow(QMainWindow):
         # Tải tệp nhạc vào bộ nhớ
         if(self.__playMusic == False):   
             pygame.mixer.music.load(self.list[self.index].link)
+            time=self.list[self.index].duration
+            self.uic.noi_dung_mp3.setMaximum(int(time))
             self.__playMusic = True
             pygame.mixer.music.play()
             self.restartTimer()

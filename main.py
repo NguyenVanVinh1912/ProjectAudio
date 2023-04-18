@@ -1,23 +1,24 @@
 import sys
 import random
+import Danh_Sach_Nhac ,nhac
 import threading as th 
 import pygame
 import time  
 from threading import Timer  
 # from timer import timer
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
-from PyQt5 import QtCore, QtGui, QtWidgets
+
 # from PyQt5.QtMultimedia import QMediaPlayer,QMediaContent
 # from PyQt5.QtMultimediaWidgets import QVideoWidget
 # from PyQt5.QtCore import QUrl
-from nhac import Ui_MainWindow
+# from nhac import Ui_MainWindow
 from music import *
 class RepeatTimer(Timer):  
     def run(self):  
         while not self.finished.wait(self.interval):  
             self.function(*self.args,**self.kwargs)  
     
-class MainWindow(QMainWindow):
+class UI_MainWindow(QMainWindow):
     
     list = []
     __playMusic=False
@@ -29,7 +30,7 @@ class MainWindow(QMainWindow):
    
     def __init__(self):
         super().__init__()
-        self.uic= Ui_MainWindow()
+        self.uic= nhac.Ui_MainWindow()
         pygame.init()
         self.uic.setupUi(self)
         self.uic.phat.clicked.connect(self.show_music)
@@ -39,13 +40,16 @@ class MainWindow(QMainWindow):
         self.uic.lap_lai.clicked.connect(self.callBackMus)
         self.uic.chuyen_bai.clicked.connect(self.nextMusic)
         self.uic.ngau_nhien.clicked.connect(self.randomMusic)
-        
+
+        #Chuyển trang
+        self.uic.thu_vien.clicked.connect(self.List_Music)
 
         self.createList()
         #self.queuMusic()
         self.timer = RepeatTimer(1,self.display) 
 
         self.uic.noi_dung_mp3.setMinimum(0)
+        self.uic.noi_dung_mp3.setMaximum(300)
         self.uic.noi_dung_mp3.setValue(0)
       
         
@@ -57,6 +61,13 @@ class MainWindow(QMainWindow):
         # self.videoWidget=QVideoWidget()
         # self.uic.verticalLayout.addWidget(self.videoWidget)
         # self.mediaPlayer.setVideoOutput(self.videoWidget)
+    def List_Music(main_window):
+        global ui
+        ui = Danh_Sach_Nhac.Ui_MainWindow()
+        # pygame.init()
+        ui.setupUi(main_window)
+        # ui.tro_ve.clicked.connect(UI_MainWindow)
+        # main_window.show()
 
     def randomMusic(self):
         if(self.ran == False):
@@ -72,6 +83,8 @@ class MainWindow(QMainWindow):
     def stopMusic(self):
         self.timer.cancel()  
         pygame.mixer.music.stop() 
+        self.uic.noi_dung_mp3.setValue(0)
+        self.uic.time_label.setText("00:00")
         self.__playMusic = False
     #hàng đợi nhạc
     def queuMusic(self):
@@ -174,6 +187,6 @@ pygame.quit()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    main_win=MainWindow()
+    main_win=UI_MainWindow()
     main_win.show()
     sys.exit(app.exec())

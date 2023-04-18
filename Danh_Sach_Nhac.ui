@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,8 +13,14 @@
     <height>679</height>
    </rect>
   </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="widget" native="true">
@@ -20,7 +29,7 @@
       <x>10</x>
       <y>80</y>
       <width>811</width>
-      <height>561</height>
+      <height>541</height>
      </rect>
     </property>
     <widget class="QGroupBox" name="groupBox">
@@ -617,6 +626,19 @@
       <string>Nghệ sĩ</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="tro_ve">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>10</y>
+      <width>93</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>trở về</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

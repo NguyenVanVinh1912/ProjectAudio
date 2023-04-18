@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
         self.timer = RepeatTimer(1,self.display) 
 
         self.uic.noi_dung_mp3.setMinimum(0)
-        self.uic.noi_dung_mp3.setMaximum(100)
+        self.uic.noi_dung_mp3.setValue(0)
       
         
         # #QMediaPlayer

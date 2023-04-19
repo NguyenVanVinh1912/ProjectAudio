@@ -20,3 +20,10 @@ class SingerDao:
     def Delete(self,id):
         self.connect.execute("delete from Singer where id = %s",id)
         mydb.commit()
+    def searchId(self,id):
+        s = [id]
+        self.connect.execute("select * from Singer where id = %s",s)
+        myresult = self.connect.fetchall()
+        name  = myresult[0][1]
+        mydb.commit()
+        return name

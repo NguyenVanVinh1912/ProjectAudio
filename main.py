@@ -1,6 +1,7 @@
 import sys
 import random
 import threading as th 
+import Danh_Sach_Nhac
 import pygame
 import time  
 import ffmpeg
@@ -58,6 +59,8 @@ class MainWindow(QMainWindow):
         self.uic.noi_dung_mp3.setMinimum(0)
         self.uic.noi_dung_mp3.setValue(0)
         self.add_guest()
+
+        self.uic.thu_vien.clicked.connect(self.List_Music)
         
         # #QMediaPlayer
         # self.mediaPlayer = QMediaPlayer(None,QMediaPlayer.VideoSurface)
@@ -67,6 +70,16 @@ class MainWindow(QMainWindow):
         # self.videoWidget=QVideoWidget()
         # self.uic.verticalLayout.addWidget(self.videoWidget)
         # self.mediaPlayer.setVideoOutput(self.videoWidget)
+
+    def List_Music(main_window):
+        global ui
+      
+        ui = Danh_Sach_Nhac.Ui_MainWindow()
+        # pygame.init()
+        ui.setupUi(main_window)
+        # ui = main_list_music.MainWindow()
+        # ui.tro_ve.clicked.connect(UI_MainWindow)
+        # main_window.show()
 
     #bảng danh sách
     def add_guest(self):
@@ -195,7 +208,8 @@ class MainWindow(QMainWindow):
     def playMusic(self):
         image = self.list[self.index].image
         linkSong = self.list[self.index].link
-        maxTime = self.duration(linkSong)
+        # maxTime = self.duration(linkSong)
+        maxTime = 300
         pygame.mixer.music.load(linkSong)
         self.uic.label_2.setText(self.list[self.index].name)
         if(image != ""):

@@ -14,11 +14,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
+        MainWindow.setEnabled(True)
         MainWindow.resize(839, 679)
+        MainWindow.setMouseTracking(False)
+        MainWindow.setDocumentMode(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(10, 80, 811, 561))
+        self.widget.setGeometry(QtCore.QRect(10, 80, 811, 541))
         self.widget.setObjectName("widget")
         self.groupBox = QtWidgets.QGroupBox(self.widget)
         self.groupBox.setGeometry(QtCore.QRect(20, 10, 171, 201))
@@ -199,6 +202,9 @@ class Ui_MainWindow(object):
         font.setPointSize(10)
         self.nghe_si.setFont(font)
         self.nghe_si.setObjectName("nghe_si")
+        self.tro_ve = QtWidgets.QPushButton(self.centralwidget)
+        self.tro_ve.setGeometry(QtCore.QRect(740, 10, 93, 41))
+        self.tro_ve.setObjectName("tro_ve")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 839, 26))
@@ -242,6 +248,7 @@ class Ui_MainWindow(object):
         self.bai_hat.setText(_translate("MainWindow", "Bài Hát"))
         self.bo_suu_tap.setText(_translate("MainWindow", "Bộ Sưu Tập"))
         self.nghe_si.setText(_translate("MainWindow", "Nghệ sĩ"))
+        self.tro_ve.setText(_translate("MainWindow", "trở về"))
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>624</width>
-    <height>803</height>
+    <height>874</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,9 +40,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>430</y>
+      <y>440</y>
       <width>621</width>
-      <height>321</height>
+      <height>401</height>
      </rect>
     </property>
     <widget class="QPushButton" name="ngau_nhien">
@@ -274,10 +274,104 @@
      </property>
     </widget>
     <widget class="QPushButton" name="dung_lai">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
-       <y>10</y>
+       <x>240</x>
+       <y>60</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>24</pointsize>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>image/tim_kiem.png</normaloff>image/tim_kiem.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>18</width>
+       <height>26</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="autoRepeat">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="table_list">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>621</width>
+       <height>261</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Chọn file</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="select">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>60</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="dung_lai_3">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>330</y>
        <width>41</width>
        <height>41</height>
       </rect>
@@ -301,29 +395,17 @@
       </size>
      </property>
     </widget>
-    <widget class="QTableWidget" name="table_list">
+    <widget class="QLineEdit" name="tim_kiem">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>100</y>
-       <width>621</width>
-       <height>211</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
+       <x>110</x>
        <y>60</y>
-       <width>93</width>
-       <height>28</height>
+       <width>161</width>
+       <height>31</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Chọn file</string>
-     </property>
     </widget>
+<<<<<<< HEAD
     <widget class="QLineEdit" name="tim_kiem">
      <property name="geometry">
       <rect>
@@ -405,6 +487,23 @@
       </rect>
      </property>
     </widget>
+=======
+    <zorder>ngau_nhien</zorder>
+    <zorder>lap_lai</zorder>
+    <zorder>volume</zorder>
+    <zorder>line</zorder>
+    <zorder>loa_active</zorder>
+    <zorder>lui_bai</zorder>
+    <zorder>phat</zorder>
+    <zorder>tam_dung</zorder>
+    <zorder>chuyen_bai</zorder>
+    <zorder>table_list</zorder>
+    <zorder>pushButton</zorder>
+    <zorder>select</zorder>
+    <zorder>dung_lai_3</zorder>
+    <zorder>tim_kiem</zorder>
+    <zorder>dung_lai</zorder>
+>>>>>>> bbabae335233ac646342815021e2e557fb2050fc
    </widget>
    <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
@@ -445,7 +544,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="ten_bai_hat">
     <property name="geometry">
      <rect>
       <x>10</x>
